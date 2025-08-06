@@ -5,20 +5,68 @@ import java.util.ArrayList;
 
 class User{
 
-    int id;
+    private int id;
 
-    String username;
+    private String username;
+
+    public User(int id, String username) {
+
+        this.id = id;
+
+        this.username = username;
+
+    }
+
+    public int getId() {
+
+        return id;
+
+    }
+
+    public String getUsername() {
+
+        return username;
+
+    }
 
 }
 
 
 class Question {
 
-    int id;
+    private int id;
 
-    String questionText;
+    private String questionText;
 
-    String answerText;
+    private String answerText;
+
+    public Question(int id, String questionText, String answerText) {
+
+        this.id = id;
+
+        this.answerText = answerText;
+
+        this.questionText = questionText;
+
+    }
+
+    public int getId(){
+
+        return id;
+
+    }
+
+    public String getQuestionText(){
+
+        return questionText;
+
+    }
+
+    public String getAnswerText(){
+
+        return answerText;
+
+    }
 
 }
 
@@ -27,31 +75,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        User user1 = new User();
+        User user1 = new User(0, "Buatilasic");
 
-        user1.id = 0;
+        User user2 = new User(1, "Aiva");
 
-        user1.username = "Buatilasic";
+        System.out.println("Пользователь " + user1.getUsername() + " имеет id " + user1.getId());
 
-        User user2 = new User();
+        System.out.println("Пользователь " + user2.getUsername() + " имеет id " + user2.getId());
 
-        user2.id = 1;
+        Question question1 = new Question(0, "Какой сейчас год?", "2025");
 
-        user2.username = "Aiva";
+        Question question2 = new Question(1, "Сколько пальцев на руке у среднестатистического человека?", "5");
 
-        System.out.println("Пользователь " + user1.username + " имеет id " + user1.id);
+        System.out.println("Вопрос №" + question1.getId() + ": " + question1.getQuestionText() + " Ответ: " + question1.getAnswerText());
 
-        System.out.println("Пользователь " + user2.username + " имеет id " + user2.id);
-
-        Question question1 = new Question();
-
-        question1.id = 1;
-
-        question1.questionText = "Какой сейчас год?";
-
-        question1.answerText = "2025";
-
-        System.out.println("Вопрос №" + question1.id + ": " + question1.questionText + " Ответ: " + question1.answerText);
+        System.out.println("Вопрос №" + question2.getId() + ": " + question2.getQuestionText() + " Ответ: " + question2.getAnswerText());
 
     }
 
